@@ -1,0 +1,17 @@
+name: Validate
+on: [push]
+jobs:
+    Explore-GitHub-Actions:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Use Node.js 16.3.0
+              uses: actions/setup-node@v1
+              with:
+                  node-version: "16.3.0"
+            - name: yarn install
+              run: yarn install
+            - name: yarn lint
+              run: yarn lint
+            - name: yarn validate-ts
+              run: yarn validate-ts
