@@ -1,0 +1,50 @@
+# https://github.com/jupyterlab/maintainer-tools/blob/main/.github/actions/update-snapshots/action.yml
+name: Update VRT base
+
+inputs:
+  github_token:
+    description: The token used to make requests to the GitHub API. It's NOT used to make commits and should not be changed.
+    required: false
+    default: ${{ github.token }}
+  branch:
+    required: true
+    description: Specify which branch should be used
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '14.x'
+    - name: Install dependencies
+      run: yarn
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+    - name: Run Playwright tests
+      run: yarn playwright test --update-snapshots
+    - uses: actions/upload-artifact@v2
+      if: always()
+      with:
+        name: playwright-report
+        path: playwright-report/
+        retention-days: 30
+    - name: Commit new snapshots
+      shell: bash -l {0}
+      working-directory: tests/vrt
+      run: |
+        git config user.name 'github-actions[bot]'
+        git config user.email 'github-actions[bot]@users.noreply.github.com'
+        git pull --no-tags
+        git add .
+        git commit -m "Update Snapshots"
+      env:
+        GITHUB_TOKEN: ${{ inputs.github_token }}
+
+    - name: Push new snapshots
+      shell: bash -l {0}
+      run: |
+        git config push.default upstream
+        git push
+      env:
+        GITHUB_TOKEN: ${{ inputs.github_token }}
