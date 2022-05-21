@@ -978,6 +978,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@playwright/test@npm:^1.22.2":
+  version: 1.22.2
+  resolution: "@playwright/test@npm:1.22.2"
+  dependencies:
+    "@types/node": "*"
+    playwright-core: 1.22.2
+  bin:
+    playwright: cli.js
+  checksum: 55392a97d920b77374926415e16e649320a9d8243f4ddca09c61827580674ad6f50057c09d5d194212d4ce60abc2cdf5f939ddd87f3670e073e9dd6c418480d5
+  languageName: node
+  linkType: hard
+
 "@swc/helpers@npm:^0.3.6":
   version: 0.3.13
   resolution: "@swc/helpers@npm:0.3.13"
@@ -1021,6 +1033,13 @@ __metadata:
   version: 0.0.29
   resolution: "@types/json5@npm:0.0.29"
   checksum: e60b153664572116dfea673c5bda7778dbff150498f44f998e34b5886d8afc47f16799280e4b6e241c0472aef1bc36add771c569c68fc5125fc2ae519a3eb9ac
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:*":
+  version: 17.0.35
+  resolution: "@types/node@npm:17.0.35"
+  checksum: 7a24946ae7fd20267ed92466384f594e448bfb151081158d565cc635d406ecb29ea8fb85fcd2a1f71efccf26fb5bd3c6f509bde56077eb8b832b847a6664bc62
   languageName: node
   linkType: hard
 
@@ -4288,6 +4307,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"playwright-core@npm:1.22.2":
+  version: 1.22.2
+  resolution: "playwright-core@npm:1.22.2"
+  bin:
+    playwright: cli.js
+  checksum: 7381c35359b4338282f73dc902c1c1311e8e7cbf852f445dd6b430ebcb7eafc842b8e512d238fdc0b70d1da2b14046f297b19dac027c6a0a62ff217e70f6a07c
+  languageName: node
+  linkType: hard
+
+"playwright@npm:latest":
+  version: 1.22.2
+  resolution: "playwright@npm:1.22.2"
+  dependencies:
+    playwright-core: 1.22.2
+  bin:
+    playwright: cli.js
+  checksum: e9e9c4a959d27b6bea3144a0cb19b15124226fb0017e65978fe781fc79129793028ec68dbe9252674120b9a0079bd0e4d17bd2e1258e66032d5ec5427f35cb6f
+  languageName: node
+  linkType: hard
+
 "please-upgrade-node@npm:^3.2.0":
   version: 3.2.0
   resolution: "please-upgrade-node@npm:3.2.0"
@@ -4580,6 +4619,7 @@ __metadata:
     "@parcel/transformer-postcss": ^2.5.0
     "@parcel/transformer-typescript-tsc": ^2.5.0
     "@parcel/validator-typescript": ^2.5.0
+    "@playwright/test": ^1.22.2
     "@types/react": ^18.0.9
     "@types/react-dom": ^18.0.3
     "@typescript-eslint/eslint-plugin": ^5.22.0
@@ -4597,6 +4637,7 @@ __metadata:
     lint-staged: ^11.1.2
     parcel: ^2.5.0
     parcel-transformer-ts-css-modules: ^1.0.14
+    playwright: latest
     postcss: ^8.4.13
     postcss-modules: ^4.3.1
     postcss-nested: ^5.0.6
