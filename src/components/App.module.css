@@ -1,7 +1,10 @@
-.background {
-    background-color: aliceblue;
+.grid {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
 }
 
-.withBorder {
-    border: 1px solid black;
+.container {
+    position: relative;
 }

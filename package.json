@@ -14,15 +14,19 @@
   "dependencies": {
     "classnames": "^2.3.1",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "react-stack-grid": "^0.7.1"
   },
   "devDependencies": {
+    "@parcel/resolver-glob": "^2.5.0",
     "@parcel/transformer-postcss": "^2.5.0",
     "@parcel/transformer-typescript-tsc": "^2.5.0",
     "@parcel/validator-typescript": "^2.5.0",
     "@playwright/test": "^1.22.2",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.3",
+    "@types/react-stack-grid": "^0.7.3",
+    "@types/sharp": "^0",
     "@typescript-eslint/eslint-plugin": "^5.22.0",
     "@typescript-eslint/parser": "^5.22.0",
     "concurrently": "^7.2.0",
@@ -44,6 +48,7 @@
     "postcss-nested": "^5.0.6",
     "postcss-plugin": "^1.0.0",
     "prettier": "^2.6.2",
+    "sharp": "^0.29.1",
     "typescript": "^4.6.4"
   },
   "lint-staged": {
