@@ -1,61 +1,65 @@
 {
-    "name": "react-css-modules-typescript-boilerplate",
-    "version": "1.0.0",
-    "scripts": {
-        "start": "parcel serve ./src/index.html",
-        "build": "parcel build ./src/index.html",
-        "lint": "eslint . --ext .ts,.tsx",
-        "validate-ts": "tsc --project ./tsconfig.json",
-        "prepare": "husky install"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "classnames": "^2.3.1",
-        "react": "^18.1.0",
-        "react-dom": "^18.1.0"
-    },
-    "devDependencies": {
-        "@parcel/transformer-postcss": "^2.5.0",
-        "@parcel/transformer-typescript-tsc": "^2.5.0",
-        "@parcel/validator-typescript": "^2.5.0",
-        "@types/react": "^18.0.9",
-        "@types/react-dom": "^18.0.3",
-        "@typescript-eslint/eslint-plugin": "^5.22.0",
-        "@typescript-eslint/parser": "^5.22.0",
-        "eslint": "^8.15.0",
-        "eslint-config-airbnb-base": "^15.0.0",
-        "eslint-config-airbnb-typescript": "^17.0.0",
-        "eslint-config-prettier": "^8.5.0",
-        "eslint-plugin-import": "^2.26.0",
-        "eslint-plugin-jsx-a11y": "^6.5.1",
-        "eslint-plugin-react": "^7.29.4",
-        "eslint-plugin-react-hooks": "^4.5.0",
-        "husky": "^7.0.2",
-        "lint-staged": "^11.1.2",
-        "parcel": "^2.5.0",
-        "parcel-transformer-ts-css-modules": "^1.0.14",
-        "postcss": "^8.4.13",
-        "postcss-modules": "^4.3.1",
-        "postcss-nested": "^5.0.6",
-        "postcss-plugin": "^1.0.0",
-        "prettier": "^2.6.2",
-        "typescript": "^4.6.4"
-    },
-    "lint-staged": {
-        "*.{ts,tsx}": "eslint --fix",
-        "**/*": "prettier --write --ignore-unknown"
-    },
-    "lintStagedComments": {
-        "**/*": "https://prettier.io/docs/en/install.html#git-hooks"
-    },
-    "keywords": [
-        "parcel",
-        "parcel-v2",
-        "css",
-        "css-modules",
-        "typescript",
-        "ts"
-    ],
-    "packageManager": "yarn@3.2.1"
+  "name": "react-css-modules-typescript-boilerplate",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel serve ./src/index.html",
+    "build": "parcel build ./src/index.html",
+    "lint": "eslint . --ext .ts,.tsx",
+    "validate-ts": "tsc --project ./tsconfig.json",
+    "prepare": "husky install",
+    "test:vrt": "playwright test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.3.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-postcss": "^2.5.0",
+    "@parcel/transformer-typescript-tsc": "^2.5.0",
+    "@parcel/validator-typescript": "^2.5.0",
+    "@playwright/test": "^1.22.2",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "concurrently": "^7.2.0",
+    "eslint": "^8.15.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "parcel": "^2.5.0",
+    "parcel-transformer-ts-css-modules": "^1.0.14",
+    "playwright": "latest",
+    "postcss": "^8.4.13",
+    "postcss-modules": "^4.3.1",
+    "postcss-nested": "^5.0.6",
+    "postcss-plugin": "^1.0.0",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.4"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --fix",
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "lintStagedComments": {
+    "**/*": "https://prettier.io/docs/en/install.html#git-hooks"
+  },
+  "keywords": [
+    "parcel",
+    "parcel-v2",
+    "css",
+    "css-modules",
+    "typescript",
+    "ts"
+  ],
+  "packageManager": "yarn@3.2.1"
 }
