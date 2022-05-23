@@ -15,3 +15,5 @@ jobs:
               run: yarn lint
             - name: yarn validate-ts
               run: yarn validate-ts
+            - name: yarn test
+              run: yarn test --ci
