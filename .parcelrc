@@ -1,5 +1,8 @@
 {
   "extends": "@parcel/config-default",
+  "resolvers": [
+    "@parcel/resolver-glob", "..."
+  ],
   "transformers": {
     "*.module.css": [
       "parcel-transformer-ts-css-modules",

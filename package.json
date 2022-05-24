@@ -7,22 +7,31 @@
     "lint": "eslint . --ext .ts,.tsx",
     "validate-ts": "tsc --project ./tsconfig.json",
     "prepare": "husky install",
-    "test:vrt": "playwright test"
+    "test:vrt": "playwright test",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.3.1",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "react-masonry-css": "^1.0.16"
   },
   "devDependencies": {
+    "@parcel/resolver-glob": "^2.5.0",
     "@parcel/transformer-postcss": "^2.5.0",
     "@parcel/transformer-typescript-tsc": "^2.5.0",
     "@parcel/validator-typescript": "^2.5.0",
     "@playwright/test": "^1.22.2",
+    "@swc/core": "^1.2.189",
+    "@swc/jest": "^0.2.21",
+    "@testing-library/react": "^13.2.0",
+    "@types/jest": "^27.5.1",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.3",
+    "@types/react-stack-grid": "^0.7.3",
+    "@types/sharp": "^0",
     "@typescript-eslint/eslint-plugin": "^5.22.0",
     "@typescript-eslint/parser": "^5.22.0",
     "concurrently": "^7.2.0",
@@ -35,6 +44,10 @@
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.5.0",
     "husky": "^7.0.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^28.1.0",
+    "jest-css-modules-transform": "^4.4.2",
+    "jest-environment-jsdom": "^28.1.0",
     "lint-staged": "^11.1.2",
     "parcel": "^2.5.0",
     "parcel-transformer-ts-css-modules": "^1.0.14",
@@ -44,6 +57,9 @@
     "postcss-nested": "^5.0.6",
     "postcss-plugin": "^1.0.0",
     "prettier": "^2.6.2",
+    "sharp": "^0.29.1",
+    "ts-jest": "^28.0.2",
+    "ts-node": "^10.8.0",
     "typescript": "^4.6.4"
   },
   "lint-staged": {

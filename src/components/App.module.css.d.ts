@@ -1,6 +1,7 @@
 declare const styles: {
-  readonly "background": string;
-  readonly "withBorder": string;
+  readonly "grid": string;
+  readonly "column": string;
+  readonly "container": string;
 };
 export = styles;
 
