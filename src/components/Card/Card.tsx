@@ -1,7 +1,7 @@
 import * as React from "react";
 import cn from "classnames";
 
-import styles from "./Card.module.css";
+import * as styles from "./Card.module.css";
 
 export type CardProps = {
     src: URL;

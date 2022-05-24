@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { createRoot } from "react-dom/client";
 
-import storyStyles from "./Story.module.css";
+import * as storyStyles from "./Story.module.css";
 
 const root = document.getElementById("root");
 
@@ -25,6 +25,8 @@ export function Stories() {
 
         if (story && story in stories) {
             setSelectedStory(story);
+        } else {
+            setSelectedStory(storiesNames[0]);
         }
         if (fullscreen && ["true", "false"].includes(fullscreen)) {
             setIsFullscreen(fullscreen === "true");
