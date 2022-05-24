@@ -1,0 +1,19 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    column-gap: 1em;
+    height: 100vh;
+    margin-bottom: 1em;
+}
+
+.navBar {
+    background-color: rgba(45,190,252,0.42);
+}
+
+.button {
+    display: block;
+}
+
+.storyContainer {
+    border: 1px solid black;
+}

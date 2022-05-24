@@ -15,6 +15,6 @@
         "noEmit": true,
         "jsx": "react"
     },
-    "include": ["src", "tests", "playwright.config.ts", "global.d.ts", "jest.config.ts"],
+    "include": ["src", "stories", "tests", "playwright.config.ts", "global.d.ts", "jest.config.ts"],
     "exclude": [".husky", ".parcel-cache", "dist", "node_modules"]
 }
