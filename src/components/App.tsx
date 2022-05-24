@@ -1,48 +1,50 @@
 import * as React from "react";
 import cn from "classnames";
-import { grid, container } from "./App.module.css";
-import StackGrid from "react-stack-grid";
+import { grid, container, column } from "./App.module.css";
+import Masonry from "react-masonry-css";
+import { Card } from "./Card";
 
-type Bike = { name: string; src: URL };
+export type Bike = { name: string; src: URL };
+type State = { [id in string]: boolean | undefined };
 
-const bikes: Bike[] = [
-    { name: "Bike 1", src: new URL("./assets/bike1.webp", import.meta.url) },
-    { name: "Bike 2", src: new URL("./assets/bike2.webp", import.meta.url) },
-    { name: "Bike 3", src: new URL("./assets/bike3.webp", import.meta.url) },
-    { name: "Bike 4", src: new URL("./assets/bike4.webp", import.meta.url) },
-    { name: "Bike 5", src: new URL("./assets/bike5.webp", import.meta.url) },
-    { name: "Bike 6", src: new URL("./assets/bike6.webp", import.meta.url) },
-    { name: "Bike 7", src: new URL("./assets/bike7.webp", import.meta.url) },
-    { name: "Bike 8", src: new URL("./assets/bike8.webp", import.meta.url) },
-    { name: "Bike 9", src: new URL("./assets/bike9.webp", import.meta.url) },
-    { name: "Bike 10", src: new URL("./assets/bike10.webp", import.meta.url) },
-    { name: "Bike 11", src: new URL("./assets/bike11.webp", import.meta.url) },
-    { name: "Bike 12", src: new URL("./assets/bike12.webp", import.meta.url) },
-];
+function bikesReducer(
+    state: State,
+    action: { type: "ADD_BIKE" | "REMOVE_BIKE"; bikeName: string },
+): State {
+    switch (action.type) {
+        case "ADD_BIKE":
+            return { ...state, [action.bikeName]: true };
+        case "REMOVE_BIKE":
+            return { ...state, [action.bikeName]: false };
+    }
+}
 
-export const App: React.FC = () => {
+export const App: React.FC<{ bikes: Bike[] }> = ({ bikes }) => {
+    const [state, dispatch] = React.useReducer(bikesReducer, {});
+    const add = React.useCallback(
+        (bikeName: string) => dispatch({ type: "ADD_BIKE", bikeName }),
+        [dispatch],
+    );
+    const remove = React.useCallback(
+        (bikeName: string) => dispatch({ type: "REMOVE_BIKE", bikeName }),
+        [dispatch],
+    );
     return (
         <div className={cn(container)}>
-            <StackGrid
-                className={cn(grid)}
-                columnWidth={"33%"}
-                monitorImagesLoaded={true}
+            <Masonry
+                className={grid}
+                breakpointCols={3}
+                columnClassName={column}
             >
-                {bikes.map((b) => {
-                    return (
-                        <div key={b.name} data-testid={"bike-card"}>
-                            <div>
-                                <div data-testid={"bike-name"}>{b.name}</div>
-                                <img
-                                    width="100%"
-                                    src={b.src.toString()}
-                                    alt={b.name}
-                                />
-                            </div>
-                        </div>
-                    );
-                })}
-            </StackGrid>
+                {bikes.map((b) => (
+                    <Card
+                        key={b.name}
+                        {...b}
+                        isSelected={state[b.name]}
+                        onClick={state[b.name] ? remove : add}
+                    />
+                ))}
+            </Masonry>
         </div>
     );
 };

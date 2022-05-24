@@ -1,10 +1,22 @@
 .grid {
     position: absolute;
     left: 50%;
+    display: flex;
     transform: translateX(-50%);
     width: 80%;
+    padding-left: -1em;
+}
+
+.column {
+    padding-left: 1em;
+    background-clip: padding-box;
+
+    > div {
+        margin-bottom: 1em;
+    }
 }
 
 .container {
     position: relative;
 }
+
