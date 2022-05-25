@@ -1,13 +1,17 @@
 import React, { Suspense } from "react";
 import { createRoot } from "react-dom/client";
 
+import "modern-normalize/modern-normalize.css";
+
 import * as storyStyles from "./Story.module.css";
 
 const root = document.getElementById("root");
 
 const stories = {
     Card: React.lazy(() => import("../src/components/Card/Card.story")),
-    Basket: React.lazy(() => import("../src/components/Basket/Basket.story")),
+    BasketButton: React.lazy(
+        () => import("../src/components/BasketButton/BasketButton.story"),
+    ),
     "Whole App": React.lazy(() => import("../src/components/App.story")),
 };
 

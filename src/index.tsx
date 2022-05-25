@@ -1,6 +1,7 @@
 import * as React from "react";
 import { createRoot } from "react-dom/client";
 import { App, Bike } from "./components/App";
+import "modern-normalize/modern-normalize.css";
 
 const root = document.getElementById("root");
 

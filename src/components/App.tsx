@@ -1,8 +1,9 @@
 import * as React from "react";
 import cn from "classnames";
-import { grid, container, column } from "./App.module.css";
+import appStyles from "./App.module.css";
 import Masonry from "react-masonry-css";
 import { Card } from "./Card";
+import { BasketButton } from "./BasketButton/BasketButton";
 
 export type Bike = { name: string; src: URL };
 type State = { [id in string]: boolean | undefined };
@@ -30,11 +31,16 @@ export const App: React.FC<{ bikes: Bike[] }> = ({ bikes }) => {
         [dispatch],
     );
     return (
-        <div className={cn(container)}>
+        <div className={cn(appStyles.container)}>
+            <div className={cn(appStyles.navBar)}>
+                <BasketButton
+                    itemsInCart={Object.values(state).filter((v) => !!v).length}
+                />
+            </div>
             <Masonry
-                className={grid}
+                className={appStyles.grid}
                 breakpointCols={3}
-                columnClassName={column}
+                columnClassName={appStyles.column}
             >
                 {bikes.map((b) => (
                     <Card

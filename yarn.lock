@@ -6387,6 +6387,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"modern-normalize@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "modern-normalize@npm:1.1.0"
+  checksum: edfd40650bd7250eb4761651886a02ca3c524effca41b9832932eab9ccf9f2cfa7e5da8491c7c8bc2d58e1696e5e765adebeaf90cd9d3376444bd6bc0b0f2c99
+  languageName: node
+  linkType: hard
+
 "ms@npm:2.0.0":
   version: 2.0.0
   resolution: "ms@npm:2.0.0"
@@ -7475,6 +7482,7 @@ playwright@latest:
     jest-css-modules-transform: ^4.4.2
     jest-environment-jsdom: ^28.1.0
     lint-staged: ^11.1.2
+    modern-normalize: ^1.1.0
     parcel: ^2.5.0
     parcel-transformer-ts-css-modules: ^1.0.14
     playwright: latest
