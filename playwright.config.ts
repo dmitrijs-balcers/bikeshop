@@ -12,7 +12,7 @@ import { devices } from "@playwright/test";
  */
 const config: PlaywrightTestConfig = {
     webServer: {
-        command: "yarn parcel serve ./src/index.html -p 8080 --no-cache",
+        command: "yarn parcel serve ./stories/index.html -p 8080 --no-cache",
         url: "http://localhost:8080",
         timeout: 120 * 1000,
         reuseExistingServer: !process.env.CI,
