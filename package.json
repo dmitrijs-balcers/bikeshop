@@ -7,7 +7,8 @@
     "lint": "eslint . --ext .ts,.tsx",
     "validate-ts": "tsc --project ./tsconfig.json",
     "prepare": "husky install",
-    "test:vrt": "playwright test",
+    "test:vrt": "playwright test -c playwright.vrt.config.ts",
+    "test:e2e": "playwright test -c playwright.e2e.config.ts",
     "test": "jest",
     "storybook": "parcel serve ./stories/index.html",
     "storybook:build": "parcel build ./stories/index.html"
