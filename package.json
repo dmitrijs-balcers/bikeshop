@@ -7,13 +7,17 @@
     "lint": "eslint . --ext .ts,.tsx",
     "validate-ts": "tsc --project ./tsconfig.json",
     "prepare": "husky install",
-    "test:vrt": "playwright test",
-    "test": "jest"
+    "test:vrt": "playwright test -c playwright.vrt.config.ts",
+    "test:e2e": "playwright test -c playwright.e2e.config.ts",
+    "test": "jest",
+    "storybook": "parcel serve ./stories/index.html",
+    "storybook:build": "parcel build ./stories/index.html"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.3.1",
+    "modern-normalize": "^1.1.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-masonry-css": "^1.0.16"

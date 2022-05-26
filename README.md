@@ -1,1 +1,1 @@
-<img src="./tests/vrt/example.spec.ts-snapshots/Landing-Page-should-have-valid-UI-1-chromium-linux.png" />
+<img src="./tests/vrt/components.spec.ts-snapshots/Components-tests-should-render-Whole-App-story-1-chromium-linux.png" />

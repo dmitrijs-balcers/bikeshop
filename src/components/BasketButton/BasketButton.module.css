@@ -1,0 +1,42 @@
+.container {
+    display: inline-block;
+}
+.button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3em 0.5em;
+    border: none;
+    border-radius: 0.3em;
+    background: rgba(159, 159, 159, 0.35);
+    cursor: pointer;
+
+    > span {
+        padding-right: 0.3em;
+    }
+
+    &:hover {
+        background-color: rgba(159, 159, 159, 0.27);
+    }
+
+    &:active {
+        background-color: rgba(159, 159, 159, 0.35);
+    }
+}
+
+.icon {
+    height: 1.3em;
+    pointer-events: none;
+}
+
+.itemsInCart {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 0.7em;
+    transform: translate(50%, 50%);
+    background-color: rgba(0, 255, 255, 0.57);
+    border-radius: 0.3em;
+    padding: 0 0.3em;
+}

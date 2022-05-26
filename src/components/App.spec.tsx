@@ -42,4 +42,30 @@ describe("App", () => {
             cardStyles.visible,
         );
     });
+
+    describe("basket button", () => {
+        it("should render amount of bikes selected", () => {
+            const { container, getAllByTestId } = render(<App bikes={bikes} />);
+
+            fireEvent.click(getAllByTestId("bike-card")[0]);
+            fireEvent.click(getAllByTestId("bike-card")[1]);
+
+            expect(getByTestId(container, "items-in-cart").textContent).toEqual(
+                "2",
+            );
+        });
+
+        it("should not render any badge if all bikes unselected", () => {
+            const { container, getAllByTestId } = render(<App bikes={bikes} />);
+
+            fireEvent.click(getAllByTestId("bike-card")[0]);
+            fireEvent.click(getAllByTestId("bike-card")[1]);
+            fireEvent.click(getAllByTestId("bike-card")[0]);
+            fireEvent.click(getAllByTestId("bike-card")[1]);
+
+            expect(getByTestId(container, "items-in-cart").textContent).toEqual(
+                "",
+            );
+        });
+    });
 });
