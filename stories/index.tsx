@@ -4,18 +4,9 @@ import { createRoot } from "react-dom/client";
 import "modern-normalize/modern-normalize.css";
 
 import * as storyStyles from "./Story.module.css";
+import { stories, storiesNames } from "./stories";
 
 const root = document.getElementById("root");
-
-const stories = {
-    Card: React.lazy(() => import("../src/components/Card/Card.story")),
-    BasketButton: React.lazy(
-        () => import("../src/components/BasketButton/BasketButton.story"),
-    ),
-    "Whole App": React.lazy(() => import("../src/components/App.story")),
-};
-
-const storiesNames = Object.keys(stories);
 
 export function Stories() {
     const [selectedStory, setSelectedStory] = React.useState<string | null>(
@@ -51,8 +42,9 @@ export function Stories() {
         setLocationParams("fullscreen", String(isFullscreen));
     }, [selectedStory, isFullscreen]);
 
-    const SelectedStoryComponent =
-        stories[selectedStory as keyof typeof stories];
+    const SelectedStoryComponent = React.lazy(
+        stories[selectedStory as keyof typeof stories],
+    );
 
     if (isFullscreen) {
         return (
