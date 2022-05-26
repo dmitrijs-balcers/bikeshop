@@ -9,9 +9,7 @@ test.describe("Landing page tests", () => {
         await cards.first().click();
         await cards.nth(4).click();
 
-        await expect(page.locator(dataTestId("items-in-cart"))).toHaveText(
-            "21",
-        );
+        await expect(page.locator(dataTestId("items-in-cart"))).toHaveText("2");
     });
 });
 
