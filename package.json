@@ -27,7 +27,7 @@
     "@parcel/transformer-postcss": "^2.5.0",
     "@parcel/transformer-typescript-tsc": "^2.5.0",
     "@parcel/validator-typescript": "^2.5.0",
-    "@playwright/test": "^1.22.2",
+    "@playwright/test": "latest",
     "@swc/core": "^1.2.189",
     "@swc/jest": "^0.2.21",
     "@testing-library/react": "^13.2.0",
