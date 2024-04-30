@@ -2,6 +2,7 @@ import { fireEvent, getByTestId, render } from "@testing-library/react";
 import { App, Bike } from "./App";
 import * as React from "react";
 import cardStyles from "./Card/Card.module.css";
+import { expect } from "@wdio/globals";
 
 const bikes: Bike[] = [
     { name: "Bike 1", src: new URL("./assets/bike1.webp", import.meta.url) },

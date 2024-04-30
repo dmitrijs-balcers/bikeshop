@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "composite": true,
+    "target": "es2017",
+    "module": "commonjs",
+    "strict": true,
+    "strictFunctionTypes": true,
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "rootDir": ".",
+    "outDir": "lib",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2017"
+    ],
+    "types": ["node"],
+    "useUnknownInCatchVariables": false
+  },
+  "include": ["src", "stories", "tests", "playwright.*.config.ts", "global.d.ts", "jest.config.ts"],
+  "exclude": [".husky", ".parcel-cache", "dist", "node_modules"]
+}

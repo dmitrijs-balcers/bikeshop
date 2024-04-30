@@ -1,4 +1,5 @@
 import { fireEvent, render } from "@testing-library/react";
+import { fn } from "@wdio/browser-runner";
 import { Card, type CardProps } from "./Card";
 import * as React from "react";
 
@@ -41,7 +42,7 @@ describe("Card", () => {
     });
 
     it("should trigger callback on click", () => {
-        const onClick = jest.fn();
+        const onClick = fn();
         const subject = prepareSubject({ onClick: onClick });
         const { getByTestId } = subject;
         fireEvent.click(getByTestId("bike-card"));
